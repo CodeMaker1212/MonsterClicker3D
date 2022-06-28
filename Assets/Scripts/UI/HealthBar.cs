@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,10 +12,8 @@ public class HealthBar : MonoBehaviour
 
         _monster.LivesChanged += OnLivesChanged; 
     }
-    private void OnDestroy()
-    {
-        _monster.LivesChanged -= OnLivesChanged;
-    }
+    private void OnDestroy() => _monster.LivesChanged -= OnLivesChanged;
+              
     private void OnLivesChanged(float percantageLives, bool isDead)
     {
         if (!isDead)
